@@ -1,1 +1,1 @@
-export {GetTodaysRates} from './Rates';
+export { GetTodaysRates } from './Rates';
