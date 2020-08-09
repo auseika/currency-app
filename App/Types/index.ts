@@ -16,11 +16,11 @@ export type Currency =
     | 'PLN';
 
 export interface CurrencyRate {
-    sellingRate: string;
-    buyingRate: string;
-    medianRate: string;
-    currencyCode: Currency;
-    unitRate: number;
+    selling_rate: string;
+    buying_rate: string;
+    median_rate: string;
+    currency_code: Currency;
+    unit_rate: number;
 }
 
 export interface Colors {
