@@ -28,7 +28,7 @@ const App: () => React.ReactNode = () => {
         return (
             <CurrenciesStack.Navigator>
                 <CurrenciesStack.Screen name="Currencies" component={Currencies} />
-                <CurrenciesStack.Screen name="CurrencyDetails" component={CurrencyDetails} />
+                <CurrenciesStack.Screen name="Currency Details" component={CurrencyDetails} />
             </CurrenciesStack.Navigator>
         );
     }
