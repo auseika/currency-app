@@ -1,6 +1,11 @@
 import React from 'react';
-import { AndroidSafeArea } from './Elements';
+import { AndroidSafeArea, CenteredSpinner } from './Elements';
+interface ScreenProps {
+    isLoading?: boolean;
+}
 
-const Screen: React.StatelessComponent = (props) => <AndroidSafeArea>{props.children}</AndroidSafeArea>;
+const Screen: React.StatelessComponent<ScreenProps> = (props) => (
+    <AndroidSafeArea>{props.isLoading ? <CenteredSpinner /> : props.children}</AndroidSafeArea>
+);
 
 export default Screen;
