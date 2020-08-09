@@ -16,7 +16,7 @@ const CurrenciesList = inject('Currencies')(
             <Screen isLoading={Currencies.isFetching}>
                 <ScrollView>
                     {Currencies.data.map((el) => (
-                        <CurrencyContainer onPress={navToDetails}>
+                        <CurrencyContainer onPress={navToDetails} key={`${el.currency_code}_list_${el.median_rate}`}>
                             <LargeText color={Colors.black}>{el.currency_code}</LargeText>
                             <FavButton currencyCode={el.currency_code} />
                         </CurrencyContainer>
