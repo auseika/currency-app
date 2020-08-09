@@ -11,14 +11,12 @@ interface FavButtonProps {
 
 const FavButton: React.StatelessComponent<FavButtonProps> = inject('Currencies')(
     observer((props) => {
-        const isActive = Currencies.favs.includes(props.currencyCode);
-
         const handlePress = () => {
             isActive ? Currencies.removeFromFav(props.currencyCode) : Currencies.addToFav(props.currencyCode);
         };
 
         return (
-            <Container active={isActive} onPress={handlePress}>
+            <Container active={Currencies.favs.includes(props.currencyCode)} onPress={handlePress}>
                 <LargeText>SAVE</LargeText>
             </Container>
         );
