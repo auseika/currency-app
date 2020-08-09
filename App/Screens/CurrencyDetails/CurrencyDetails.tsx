@@ -1,8 +1,8 @@
 import React from 'react';
 import Screen from '@Components/Screen';
-
 import FavButton from '@Components/FavButton';
 import { Colors } from '@Globals';
+
 import { CustomText } from './Elements';
 
 const CurrencyDetails = ({ route }) => {
