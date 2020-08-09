@@ -12,7 +12,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from '@Screens/Home';
-import Currencies from '@Screens/Currencies';
+import Currencies from '@Screens/CurrenciesList';
 import CurrencyDetails from '@Screens/CurrencyDetails';
 
 import * as stores from '@Stores/Global';

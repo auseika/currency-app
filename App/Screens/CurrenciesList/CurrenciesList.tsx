@@ -1,10 +1,10 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import Screen from '@Components/Screen';
-import Favorites from '@Stores/Global/Favorites';
 import Currencies from '@Stores/Global/Currencies';
+import Favorites from '@Stores/Global/Favorites';
 
-const CurrencyDetails = inject(
+const CurrenciesList = inject(
     'Favorites',
     'Currencies',
 )(
@@ -13,4 +13,4 @@ const CurrencyDetails = inject(
     }),
 );
 
-export default CurrencyDetails;
+export default CurrenciesList;
