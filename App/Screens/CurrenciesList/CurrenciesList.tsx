@@ -5,18 +5,24 @@ import Screen from '@Components/Screen';
 import FavButton from '@Components/FavButton';
 import { LargeText } from '@Components/Text';
 import { Colors } from '@Globals';
+import { CurrencyRate } from '@Types';
 import { CurrencyContainer } from './Elements';
 
 import Currencies from '@Stores/Global/Currencies';
 
 const CurrenciesList = inject('Currencies')(
     observer(({ navigation }) => {
-        const navToDetails = () => navigation.navigate('Currency Details');
+        const navToDetails = (navParam: CurrencyRate) =>
+            navigation.navigate('Currency Details', { currency: navParam });
+
         return (
             <Screen isLoading={Currencies.isFetching}>
                 <ScrollView>
                     {Currencies.data.map((el) => (
-                        <CurrencyContainer onPress={navToDetails} key={`${el.currency_code}_list_${el.median_rate}`}>
+                        <CurrencyContainer
+                            onPress={() => navToDetails(el)}
+                            key={`${el.currency_code}_list_${el.median_rate}`}
+                        >
                             <LargeText color={Colors.black}>{el.currency_code}</LargeText>
                             <FavButton currencyCode={el.currency_code} />
                         </CurrencyContainer>
