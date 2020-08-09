@@ -20,7 +20,7 @@ export interface CurrencyRate {
     buying_rate: string;
     median_rate: string;
     currency_code: Currency;
-    unit_rate: number;
+    unit_value: number;
 }
 
 export interface Colors {
