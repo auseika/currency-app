@@ -1,38 +1,44 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "experimentalDecorators": true,
-        "jsx": "react-native",
-        "module": "es2015",
-        "moduleResolution": "node",
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noUnusedLocals": true,
-        "sourceMap": true,
-        "target": "es2015",
-        "lib": ["esnext"],
-        "skipLibCheck": true,
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "jsx": "react-native",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "sourceMap": true,
+    "target": "es2015",
+    "lib": ["esnext"],
+    "skipLibCheck": true,
 
-        "esModuleInterop": true,
-        "isolatedModules": false,
-        "noEmit": true,
-        "strict": true,
+    "esModuleInterop": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "strict": true,
 
-        "noUnusedParameters": true,
-        "baseUrl": "./",
-        "emitDecoratorMetadata": true,
-        "paths": {
-            "@Assets/*": ["App/Assets/*"],
-            "@Components/*": ["App/Components/*"],
-            "@Components": ["App/Components"],
-            "@Screens/*": ["App/Screens/*"],
-            "@Types": ["App/Types/index.ts"],
-            "@Globals": ["App/Globals/index.ts"],
-            "@MOCK_DATA/*": ["App/MOCK_DATA/*"]
-        }
-    },
-    "exclude": ["node_modules", "!node_modules/@types", "babel.config.js", "metro.config.js", "jest.config.js"],
-    "include": ["App", "./**/*.d.ts"]
+    "noUnusedParameters": true,
+    "baseUrl": "./",
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@Assets/*": ["App/Assets/*"],
+      "@Components/*": ["App/Components/*"],
+      "@Components": ["App/Components"],
+      "@Screens/*": ["App/Screens/*"],
+      "@Types": ["App/Types/index.ts"],
+      "@Globals": ["App/Globals/index.ts"],
+      "@API*": ["App/API"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "!node_modules/@types",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ],
+  "include": ["App", "./**/*.d.ts"]
 }

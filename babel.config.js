@@ -25,7 +25,7 @@ module.exports = {
           '@Screens': './App/Screens',
           '@Types': './App/Types/index.ts',
           '@Globals': './App/Globals/index.ts',
-          '@MOCK_DATA': './App/MOCK_DATA',
+          '@API': './App/API/index.ts',
         },
       },
     ],
