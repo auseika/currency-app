@@ -14,9 +14,9 @@ type Currency =
   | 'PLN';
 
 export interface CurrencyRate {
-  sellingRate: '4.565264';
-  buyingRate: '4.537954';
-  medianRate: '4.551609';
+  sellingRate: string;
+  buyingRate: string;
+  medianRate: string;
   currencyCode: Currency;
   unitRate: number;
 }
