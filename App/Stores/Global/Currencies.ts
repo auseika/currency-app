@@ -9,6 +9,8 @@ class Currencies extends BaseFetchStore {
     fetch = async () => {
         this.wrapApiCall(async () => {
             const resp = await GetTodaysRates();
+            console.log('STORE');
+            console.log(resp);
             this.data = resp;
         });
     };

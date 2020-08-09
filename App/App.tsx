@@ -6,6 +6,7 @@
  */
 import React from 'react';
 import { enableScreens } from 'react-native-screens';
+import { Provider } from 'mobx-react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -13,6 +14,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '@Screens/Home';
 import Currencies from '@Screens/Currencies';
 import CurrencyDetails from '@Screens/CurrencyDetails';
+
+import * as stores from '@Stores/Global';
 
 // perf stuff goes here
 enableScreens();
@@ -33,12 +36,14 @@ const App: () => React.ReactNode = () => {
     const Tab = createBottomTabNavigator();
 
     return (
-        <NavigationContainer>
-            <Tab.Navigator>
-                <Tab.Screen name="Home" component={Home} />
-                <Tab.Screen name="Currencies" component={CurrenciesStackScreen} />
-            </Tab.Navigator>
-        </NavigationContainer>
+        <Provider {...stores}>
+            <NavigationContainer>
+                <Tab.Navigator>
+                    <Tab.Screen name="Home" component={Home} />
+                    <Tab.Screen name="Currencies" component={CurrenciesStackScreen} />
+                </Tab.Navigator>
+            </NavigationContainer>
+        </Provider>
     );
 };
 

@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { inject, observer } from 'mobx-react';
+import { Text } from 'react-native';
 import Screen from '@Components/Screen';
+import Currencies from '@Stores/Global/Currencies';
 
-const Home = () => {
-    return <Screen></Screen>;
-};
+const Home = inject('Currencies')(
+    observer(() => {
+        useEffect(() => {
+            Currencies.fetch();
+        }, []);
+
+        return (
+            <Screen>
+                <Text>test</Text>
+                <Text>{JSON.stringify(Currencies.data)}</Text>
+            </Screen>
+        );
+    }),
+);
 
 export default Home;
