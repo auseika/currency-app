@@ -28,4 +28,5 @@ export interface Colors {
     white: string;
     blue: string;
     gray: string;
+    lightGray: string;
 }
