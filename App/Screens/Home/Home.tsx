@@ -11,12 +11,7 @@ const Home = inject('Currencies')(
             Currencies.fetch();
         }, []);
 
-        return (
-            <Screen isLoading={Currencies.isFetching}>
-                <Text>test</Text>
-                <Text>{JSON.stringify(Currencies.data)}</Text>
-            </Screen>
-        );
+        return <Screen isLoading={Currencies.isFetching}></Screen>;
     }),
 );
 
