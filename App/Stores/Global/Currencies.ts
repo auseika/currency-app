@@ -21,7 +21,6 @@ class Currencies extends BaseFetchStore {
         this.wrapApiCall(async () => {
             const resp = await GetTodaysRates();
             const extracted = await this.getSaved();
-            console.log(`Extracted: ${extracted}`);
             this.data = resp;
             this.favs = extracted;
         });
@@ -33,7 +32,6 @@ class Currencies extends BaseFetchStore {
 
         //record to async
         const transformed = JSON.stringify(this.favs);
-        console.log(`Transformed: ${transformed}`);
         await AsyncStorage.setItem('favs', transformed);
     };
 

@@ -11,8 +11,6 @@ interface FavButtonProps {
 
 const FavButton: React.StatelessComponent<FavButtonProps> = inject('Currencies')(
     observer((props) => {
-        console.log('STORE');
-        console.log(Currencies.favs);
         const handlePress = () => {
             Currencies.favs.includes(props.currencyCode)
                 ? Currencies.removeFromFav(props.currencyCode)
