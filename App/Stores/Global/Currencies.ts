@@ -5,22 +5,25 @@ import { Currency, CurrencyRate } from '@Types';
 import { GetTodaysRates } from '@API';
 
 class Currencies extends BaseFetchStore {
+    @action
     getSaved = async () => {
-        const extractedFavs = await AsyncStorage.getItem('favs');
-        Array.from(JSON.stringify(extractedFavs));
-        return extractedFavs != null ? extractedFavs : [];
+        const extractedFavs = (await AsyncStorage.getItem('favs')) || '[]';
+        // console.log(`Extracted parsed: ${Array.from(extractedFavs)}`);
+
+        return JSON.parse(extractedFavs);
     };
 
-    extracted = this.getSaved();
-
     @observable data: CurrencyRate[] = [];
-    @observable favs: Currency[] = this.extracted;
+    @observable favs: any = [];
 
     @action
     fetch = async () => {
         this.wrapApiCall(async () => {
             const resp = await GetTodaysRates();
+            const extracted = await this.getSaved();
+            console.log(`Extracted: ${extracted}`);
             this.data = resp;
+            this.favs = extracted;
         });
     };
 
@@ -30,6 +33,7 @@ class Currencies extends BaseFetchStore {
 
         //record to async
         const transformed = JSON.stringify(this.favs);
+        console.log(`Transformed: ${transformed}`);
         await AsyncStorage.setItem('favs', transformed);
     };
 
